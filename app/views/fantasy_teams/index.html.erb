@@ -1,0 +1,25 @@
+<table>
+<thead><tr>
+  <td>
+    Team
+  </td>
+  <td>
+    Points
+  </td>
+
+</tr></thead>
+  <% @teams.each do |team| %>
+
+      <tr>
+        <td>
+          <%= link_to team.name, fantasy_team_path(team) %>
+        </td>
+        <td>
+          <%= team.team_points.sum(:points) %>
+        </td>
+      </tr>
+
+
+  <% end %>
+
+</table>
